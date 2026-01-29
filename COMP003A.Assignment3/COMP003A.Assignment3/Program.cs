@@ -11,7 +11,14 @@ namespace COMP003A.Assignment3
             Console.Write("Enter your birth year: ");
             int birthYear = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"Calculated Age: {2026 - birthYear}");
+            Console.WriteLine($"Calculated Age: {DateTime.Now.Year - birthYear}");
+
+            if (birthYear >= 0 && birthYear <= 14)
+            { Console.WriteLine("Child"); }
+            else if (birthYear >= 15 && birthYear <= 64)
+            { Console.WriteLine("Adult"); }
+            else if (birthYear >= 65)
+            { Console.WriteLine("Elder"); }
         }
     }
 }
