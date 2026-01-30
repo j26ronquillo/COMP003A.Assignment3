@@ -8,17 +8,17 @@ namespace COMP003A.Assignment3
         {
             Console.WriteLine("=== Academic & Personal Readiness Evaluator ===\n");
             Console.WriteLine($"Current Year: {DateTime.Now.Year}");
-            Console.Write($"Enter your birth year: {birthYear}\n");
+            Console.Write("Enter your birth year: ");
             int birthYear = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"Calculated Age: {DateTime.Now.Year - birthYear}");
-            int calcBirthYear = (DateTime.Now.Year - birthYear);
+            Console.WriteLine($"\nCalculated Age: {DateTime.Now.Year - birthYear}");
+            int age = (DateTime.Now.Year - birthYear);
 
-            if (calcBirthYear >= 0 && calcBirthYear <= 17)
+            if (age >= 0 && age <= 17)
             { Console.WriteLine("Readiness Category: Child\n"); }
-            else if (calcBirthYear >= 18 && calcBirthYear <= 64)
+            else if (age >= 18 && age <= 64)
             { Console.WriteLine("Readiness Category: Adult\n"); }
-            else if (calcBirthYear >= 65)
+            else if (age >= 65)
             { Console.WriteLine("Readiness Category: Elder\n"); }
 
             Console.Write("Do you have a valid ID? (yes/no): ");
@@ -29,7 +29,7 @@ namespace COMP003A.Assignment3
             string completeOri = Console.ReadLine();
             bool passedOri = (completeOri == "yes");
 
-            if (calcBirthYear >= 18)
+            if (age >= 18)
             {
                 if (idTrue && passedOri)
                 { Console.WriteLine("Readiness Status: Ready!"); }
